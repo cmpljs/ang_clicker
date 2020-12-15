@@ -1,6 +1,12 @@
 .textInput {
     height: 20px;
     margin: 5px 5px;
+    border-radius: 20px;
+    font-size: 18px;
+
+    &:focus {
+        outline: none;
+    }
 
 }
 
@@ -13,10 +19,10 @@
 }
 
 p {
-    color: rgb(96, 194, 240);
+    color: rgb(0, 0, 0);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-shadow: 3px 3px 3px black;
     font-size: 20px;
+    font-weight: 600;
     
 }
 
@@ -25,13 +31,18 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: rgb(201, 197, 197);
+    border-radius: 10px;
+    padding: 20px 50px;
+    box-shadow: 2px 4px 5px;
 }
 
 .submitInput {
-    background-color: rgb(184, 220, 250);
+    background-color: rgb(151, 192, 226);
     height: 30px;
     width: 100px;
     border-radius: 10%;
+    font-size: 18px;
 
     &:hover {
         cursor: pointer;

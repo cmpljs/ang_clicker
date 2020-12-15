@@ -2,15 +2,15 @@
     <h3>Choose game mode:</h3>
     <form class="modeForm" (ngSubmit)='submitModeForm()'>
         <label for="5">
-            <input name="gameMode" #name type="radio" [(ngModel)]='choosenGameMode' value="5" checked>
+            <input name="gameMode" #name type="radio" [(ngModel)]='choosenGameMode' value="5" class="radio" checked>
              5 seconds 
         </label>
         <label for="10">
-            <input name="gameMode" type="radio" [(ngModel)]='choosenGameMode' value="10">
+            <input name="gameMode" type="radio" [(ngModel)]='choosenGameMode' value="10" class="radio">
             10 seconds 
         </label>
         <label for="15">
-            <input name="gameMode" type="radio" [(ngModel)]='choosenGameMode' value="15">
+            <input name="gameMode" type="radio" [(ngModel)]='choosenGameMode' value="15" class="radio">
             15 seconds 
         </label>
         <input class="submitInput" type="submit" value="Click">
