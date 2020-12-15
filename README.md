@@ -1,2 +1,2 @@
-FE Lab Angular Homework
-published on: https://cmpljs.github.io/ang_clicker
+FE Lab Angular Homework. 
+Published on: https://cmpljs.github.io/ang_clicker
