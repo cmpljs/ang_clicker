@@ -1,8 +1,10 @@
-<h3>Clicks: {{clicks}}</h3>
-<div *ngIf='gameInProgress'>
-    <button class="clicker" (click)='countClicks()'>You have {{secondsLeft}} seconds!</button>
-</div>
-
-<div *ngIf='!gameInProgress'>
-    <button class="clicker" (click)='playGame()'>{{btnMsg}}</button>
+<div id="wrapper">
+    <h3>Clicks: {{clicks}}</h3>
+    <div *ngIf='gameInProgress'>
+        <button class="clicker" (click)='countClicks()'>{{btnMsg}}</button>
+    </div>
+    
+    <div *ngIf='!gameInProgress'>
+        <button class="clicker" (click)='playGame()'>Click to start</button>
+    </div>
 </div>

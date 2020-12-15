@@ -28,21 +28,24 @@ export class GamePlayComponent implements OnInit {
   }
 
   playGame() {
+    this.secondsLeft =  +this._modeService.getMode();
+    this.btnMsg = `${this.secondsLeft} seconds left!`;
     this.gameInProgress = true;
 
     let timer = setInterval(() => {
       this.secondsLeft--;
+      this.btnMsg = `${this.secondsLeft} seconds left!`;
 
       if (this.secondsLeft <= 0) {
         clearInterval(timer);
         this._clicksService.emitChange(this.clicks);
+        this.finishGame();
       }
     }, 1000)
   }
 
   countClicks() {
     this.clicks++;
-
   }
 
 }

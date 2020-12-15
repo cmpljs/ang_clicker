@@ -1,12 +1,26 @@
 h1 {
     text-align: center;
     font-size: 41;
+    color: rgb(96, 194, 240);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 3px 3px 3px black;
 
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:focus {
+        border: none;
+        outline: none;
+    }
 }
 
-main {
-    display: flex;
-    flex-direction: row;
+.light {
+    background: rgb(201, 197, 197);
+    border-radius: 10px;
+    padding: 20px 50px;
+    box-shadow: 2px 4px 5px;
+
 }
 
 .wrapper {
@@ -15,9 +29,52 @@ main {
     flex-direction: column;
     justify-items: center;
     align-content: center;
-    margin: 100px 35%;
+    margin: 100px 38%;
     padding: 10px;
-    width: 300px;
-    height: 500px;
+    width: 400px;
+    min-height: 700px;
+    box-shadow: 2px 4px 5px;
+    border-radius: 4px;
+    background: rgb(53, 53, 53);
 }
 
+.smallLink {
+    margin: -20px 0 0 0;
+
+    &:hover {
+        cursor: pointer;
+        color:rgb(96, 194, 240);
+        text-shadow: 3px 3px 3px black;
+
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.finishMsg {
+    position: absolute;
+    left: 27%;
+    top: 20%;
+    font-size: 102px;
+    font-weight: 800;
+    color: rgb(96, 194, 240);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 3px 3px 3px black;
+    animation: flush 3.5s;
+}
+
+@keyframes flush {
+    from {
+        opacity: 0%;
+    }
+
+    50% {
+        opacity: 100%;
+    }
+
+    to {
+        opacity: 0%;
+    }
+}

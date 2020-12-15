@@ -1,15 +1,22 @@
-<main>
-  
-  <div class="wrapper">
-    <h1>Clicker app</h1>
-    <h3>Records:</h3>  
-    <ul>
-      <li *ngFor='let record of records'>
-        Name: {{record[0]}}, Clicks: {{record[1]}}
-      </li>
-    </ul>
-    <h2 *ngIf='currentPlayerName'>Player: {{currentPlayerName}}</h2>
-    <router-outlet></router-outlet>
-  </div>
 
-</main>
+  <div class="wrapper">
+    <h1 routerLink='/home'>Clicker app</h1>
+
+    <div class="light">
+      <h3>Records:</h3>  
+      <ul>
+        <li *ngFor='let record of records'>
+          Name: {{record[0]}}, Clicks: {{record[1]}}
+        </li>
+      </ul>
+
+      <div *ngIf='currentPlayerName'>
+        <h2>Player: {{currentPlayerName}}</h2>
+        <p class="smallLink" routerLink='/home'>change player</p>
+      </div>
+    </div>
+    
+
+    <router-outlet></router-outlet>
+    <p class="finishMsg" *ngIf='finishMsg'>{{finishMsg}}</p>
+  </div>

@@ -16,32 +16,42 @@ export class AppComponent {
     _authService.changeEmitted$.subscribe(
       name => {
         this.currentPlayerName = name;
-        this.records.push([name, 0]);
+        this.records.unshift([name, 0]);
       });
 
       _clicksService.changeEmitted$.subscribe(
       (clicks:number) => {
-        this.records[this.findCurrentPlayer()][1] = clicks;
+
+        this.finishMsg = `${this.isRecord(clicks) ? 'Nice, a new record!' : 'You can do better!'}`;
+        setTimeout(() => {
+          this.finishMsg = '';
+        }, 3500);
+
+        if (this.isRecord(clicks)) {
+          this.records[0][1] = clicks;
+        }
+
       });
 
     
   }
 
-  findCurrentPlayer(): any {
-    this.records.forEach((item, index) => {
-      console.log('item 0: ' + item[0], 'name:' + this.currentPlayerName);
+  isRecord(clicks: number): boolean {
+    let foundRecord = false;
 
-      if (item[0] === this.currentPlayerName) {
-        return index;
+    this.records.forEach(i => {
+      if (i[1] < clicks) {
+        foundRecord = true;
       }
+    });
 
-      return -1;
-    })
+    return foundRecord;
   }
 
   title = 'ClickerApp';
   records:[string, number][] = [];
   currentPlayerName:string = '';
-  currentGameMode:string = '5;'
+  currentGameMode:string = '5';
+  finishMsg:string = '';
 
 }
