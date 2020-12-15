@@ -1,3 +1,8 @@
-<h2>You have {{secondsLeft}} seconds!</h2>
+<h3>Clicks: {{clicks}}</h3>
+<div *ngIf='gameInProgress'>
+    <button class="clicker" (click)='countClicks()'>You have {{secondsLeft}} seconds!</button>
+</div>
 
-<button class="clicker"></button>
+<div *ngIf='!gameInProgress'>
+    <button class="clicker" (click)='playGame()'>{{btnMsg}}</button>
+</div>

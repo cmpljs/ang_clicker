@@ -1,5 +1,15 @@
-<div id='wrapper'>
-  <h1>Clicker app</h1>
-  <h2 *ngIf='currentPlayerName'>Player: {{currentPlayerName}}</h2>
-  <router-outlet></router-outlet>
-</div>
+<main>
+  
+  <div class="wrapper">
+    <h1>Clicker app</h1>
+    <h3>Records:</h3>  
+    <ul>
+      <li *ngFor='let record of records'>
+        Name: {{record[0]}}, Clicks: {{record[1]}}
+      </li>
+    </ul>
+    <h2 *ngIf='currentPlayerName'>Player: {{currentPlayerName}}</h2>
+    <router-outlet></router-outlet>
+  </div>
+
+</main>
