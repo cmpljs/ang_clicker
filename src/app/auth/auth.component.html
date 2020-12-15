@@ -1,0 +1,7 @@
+<div id="wrapper">
+    <p>Enter your name:</p>
+    <form (ngSubmit)='onNameFormSubmit(name.value)' class="nameForm">
+        <input type="text" required #name class="textInput" ([ngModel])='playerName'>
+        <input type="submit" class="submitInput" value='JMI SUDA'>
+    </form>
+</div>
